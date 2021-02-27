@@ -34,7 +34,7 @@ using Spine.Unity;
 namespace Spine.Unity.Examples {
 
 	[RequireComponent(typeof(CharacterController))]
-	public class BasicPlatformerController : MonoBehaviour {
+	public class PlayerController : MonoBehaviour {
 
 		public enum CharacterState {
 			None,
