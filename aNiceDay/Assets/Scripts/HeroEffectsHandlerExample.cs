@@ -32,7 +32,7 @@ using UnityEngine.Events;
 
 namespace Spine.Unity.Examples {
 	public class HeroEffectsHandlerExample : MonoBehaviour {
-		public BasicPlatformerController eventSource;
+		public PlayerController eventSource;
 		public UnityEvent OnJump, OnLand, OnHardLand;
 
 		public void Awake () {
