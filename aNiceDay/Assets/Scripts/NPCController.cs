@@ -90,14 +90,19 @@ namespace Spine.Unity.Examples {
 		float minimumJumpEndTime = 0;
 		float forceCrouchEndTime;
 		bool wasGrounded = false;
-
+		float movementTimer = 0.0f;
 		CharacterState previousState, currentState;
+
+		void Start()
+		{
+			input.x = 0.5f;
+		}
 
 		void Update () {
 
 			//Measure the time for the NPC to move left and right
 
-			float timer = 0.0f;
+			
 
 			float dt = Time.deltaTime;
 			bool isGrounded = controller.isGrounded;
@@ -108,7 +113,7 @@ namespace Spine.Unity.Examples {
 			bool doJump = false;
 			bool hardLand = false;
 
-			input.x = -0.5f;
+			
 			// Input for the attack 
 			
 			//Check 
@@ -147,16 +152,14 @@ namespace Spine.Unity.Examples {
 			velocity.x = 0;
 			if (!doCrouch)
 			{
-				if (timer < 3.0f) 
+				movementTimer += dt;
+				if (movementTimer > 3.0f) 
 				{
-					input.x = 1;
-
+					input.x = -(input.x);
+					movementTimer = 0.0f;
 				}
-				if (input.x != 0)
-				{
-					velocity.x = Mathf.Abs(input.x) > 0.6f ? runSpeed : walkSpeed;
-					velocity.x *= Mathf.Sign(input.x);
-				}
+				velocity.x = Mathf.Abs(input.x) > 0.6f ? runSpeed : walkSpeed;
+				velocity.x *= Mathf.Sign(input.x);
 			}
 
 
