@@ -6,6 +6,7 @@ public class House : MonoBehaviour
 {
     GameObject FrontOfHouse;
     GameObject DoorFrame;
+    private Interactable interactable;
 
     [SerializeField]
     private float HouseZ = -2.0f;
