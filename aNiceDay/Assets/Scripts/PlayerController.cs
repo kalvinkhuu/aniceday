@@ -30,6 +30,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using Spine.Unity;
+using UnityEngine.SceneManagement;
 
 namespace Spine.Unity.Examples
 {
@@ -261,14 +262,14 @@ namespace Spine.Unity.Examples
                 }
             }
 
-            if (transform.position.y <= 0)
+            if (transform.position.y <= -5)
             {
                 LifeTimerLimit = 0.0f;
             }
 
             if (LifeTimerLimit <= 0.0f)
             {
-                //change scene
+                SceneManager.LoadScene("TransitionScene");
             }
 
 

@@ -81,7 +81,9 @@ namespace Spine.Unity.Examples {
 		[Header("Hitpoints")]
 		public int amountOfTimeGettingHit = 0;
 		public int maxHitpoints = 3;
-		
+		[Header("NPC Options")]
+		public bool doesPatrol = true;
+		public bool isInteractable = true;
 
 		[Header("Animation")]
 		public SkeletonAnimationHandleExample animationHandle;
@@ -99,7 +101,11 @@ namespace Spine.Unity.Examples {
 
 		void Start()
 		{
-			input.x = 0.5f;
+			if (doesPatrol) 
+			{
+				input.x = 0.5f;
+			}
+			
 		}
 
 		void Update () {
@@ -156,14 +162,17 @@ namespace Spine.Unity.Examples {
 			velocity.x = 0;
 			if (!doCrouch)
 			{
-				movementTimer += dt;
-				if (movementTimer > 3.0f) 
+				if (doesPatrol)
 				{
-					input.x = -(input.x);
-					movementTimer = 0.0f;
+					movementTimer += dt;
+					if (movementTimer > 3.0f)
+					{
+						input.x = -(input.x);
+						movementTimer = 0.0f;
+					}
+					velocity.x = Mathf.Abs(input.x) > 0.6f ? runSpeed : walkSpeed;
+					velocity.x *= Mathf.Sign(input.x);
 				}
-				velocity.x = Mathf.Abs(input.x) > 0.6f ? runSpeed : walkSpeed;
-				velocity.x *= Mathf.Sign(input.x);
 			}
 
 
