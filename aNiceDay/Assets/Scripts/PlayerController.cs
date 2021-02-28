@@ -82,7 +82,7 @@ namespace Spine.Unity.Examples
         public float attackDamage = 10;
 
         [Header("Health")]
-        float LifeTimerLimit;
+        
 
         [Header("Animation")]
         public SkeletonAnimationHandleExample animationHandle;
@@ -116,9 +116,15 @@ namespace Spine.Unity.Examples
 
         private House houseEntered = null;
         private bool isInsideHouse = false;
+
+        public int LifeTimerLimit = 180;
+        public int currentHealth;
+        public HealthBar healthBar;
+
         void Start()
         {
-            LifeTimerLimit = 180;
+            currentHealth = LifeTimerLimit;
+            healthBar.SetMaxHealth(LifeTimerLimit);
             playerWeapon = GetComponentInChildren<PlayerWeapon>();
             
         }
@@ -282,10 +288,10 @@ namespace Spine.Unity.Examples
 
             if (transform.position.y <= -5)
             {
-                LifeTimerLimit = 0.0f;
+                currentHealth = 0;
             }
 
-            if (LifeTimerLimit <= 0.0f)
+            if (currentHealth <= 0)
             {
                 SceneManager.LoadScene("TransitionScene");
             }
@@ -317,6 +323,9 @@ namespace Spine.Unity.Examples
                 }
                 
             }
+
+            currentHealth = LifeTimerLimit - (int)dt;
+            
 
         }
 
