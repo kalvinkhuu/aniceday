@@ -95,6 +95,8 @@ namespace Spine.Unity.Examples {
 		float movementTimer = 0.0f;
 		CharacterState previousState, currentState;
 
+		private PlayerWeapon p;
+
 		void Start()
 		{
 			input.x = 0.5f;
@@ -104,8 +106,8 @@ namespace Spine.Unity.Examples {
 
 			//Measure the time for the NPC to move left and right
 
-			
 
+			transform.position.Set(transform.position.x, transform.position.y, 0.0f);
 			float dt = Time.deltaTime;
 			bool isGrounded = controller.isGrounded;
 			bool landed = !wasGrounded && isGrounded;
@@ -193,7 +195,7 @@ namespace Spine.Unity.Examples {
 
 			if (amountOfTimeGettingHit == maxHitpoints) 
 			{
-				// NPC dies
+				Destroy(gameObject);
 			}
 
 			bool stateChanged = previousState != currentState;
@@ -208,11 +210,18 @@ namespace Spine.Unity.Examples {
 			if (input.x != 0)
 				animationHandle.SetFlip(input.x);
 
+			
 
+		}
 
-
-
-
+		private void OnTriggerEnter(Collider other)
+		{
+			var PlayerWeapon = other.GetComponent<PlayerWeapon>();
+			if (PlayerWeapon != null && PlayerWeapon.GetIsAttacking())
+			{
+				
+				amountOfTimeGettingHit++;
+			}
 		}
 
 		void HandleStateChanged () {
