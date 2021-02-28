@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Leafs
-  m_Shader: {fileID: 4800000, guid: cd4dfe8734babf64c97235e61c49de3b, type: 3}
-  m_ShaderKeywords: _ALPHABLEND_ON _GLOSSYREFLECTIONS_OFF _METALLICGLOSSMAP _SPECULARHIGHLIGHTS_OFF
+  m_Name: GrassMaterial
+  m_Shader: {fileID: 4800000, guid: a83ea68fc396e9043bedca456e217357, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -44,11 +44,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ba17d3306dbd898448c7f92704df28a8, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: ba17d3306dbd898448c7f92704df28a8, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
@@ -64,43 +64,35 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WindTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 10
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
-    - _GrassBlades: 1
-    - _GrassHeight: 0
-    - _GrassWidth: 1
-    - _MaxCameraDistance: 10
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _GrassBlades: 0
+    - _GrassHeight: 0.2
+    - _GrassWidth: 0.02
+    - _MaxCameraDistance: 0
     - _Metallic: 0
-    - _MinimunGrassBlades: 1
-    - _Mode: 2
+    - _MinimunGrassBlades: 15
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PositionRandomness: 0
+    - _PositionRandomness: 0.1
     - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 0
-    - _SrcBlend: 5
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
     - _UVSec: 0
-    - _UseUIAlphaClip: 0
-    - _WindSpeed: 0
-    - _WindStrength: 0
-    - _ZWrite: 0
+    - _WindSpeed: 0.3
+    - _WindStrength: 0.05
+    - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - _Color: {r: 0.28617838, g: 0.5566038, b: 0.28889513, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Specular: {r: 0, g: 0, b: 0, a: 0}
-    - _WindColor: {r: 1, g: 1, b: 1, a: 1}
+    - _WindColor: {r: 0.629272, g: 0.745283, b: 0.6711193, a: 1}
