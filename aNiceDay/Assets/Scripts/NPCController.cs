@@ -78,8 +78,10 @@ namespace Spine.Unity.Examples {
 		[Header("InteractionWithPlayer")]
 		public bool isProvoke;
 
+		[Header("Hitpoints")]
+		public int amountOfTimeGettingHit = 0;
+		public int maxHitpoints = 3;
 		
-
 
 		[Header("Animation")]
 		public SkeletonAnimationHandleExample animationHandle;
@@ -186,6 +188,12 @@ namespace Spine.Unity.Examples {
 				}
 			} else {
 				currentState = velocity.y > 0 ? CharacterState.Rise : CharacterState.Fall;
+			}
+
+
+			if (amountOfTimeGettingHit == maxHitpoints) 
+			{
+				// NPC dies
 			}
 
 			bool stateChanged = previousState != currentState;

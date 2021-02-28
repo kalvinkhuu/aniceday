@@ -73,7 +73,8 @@ namespace Spine.Unity.Examples {
 		[Header("Attack")]
 		public float attackDamage = 10;
 		 
-
+		[Header ("Health")]
+		float LifeTimerLimit;
 
 		[Header("Animation")]
 		public SkeletonAnimationHandleExample animationHandle;
@@ -87,7 +88,13 @@ namespace Spine.Unity.Examples {
 		float forceCrouchEndTime;
 		bool wasGrounded = false;
 
+
 		CharacterState previousState, currentState;
+
+		void start() 
+		{
+			LifeTimerLimit = 180;
+		}
 
 		void Update () {
 			float dt = Time.deltaTime;
@@ -199,6 +206,19 @@ namespace Spine.Unity.Examples {
 					OnLand.Invoke();
 				}
 			}
+
+			if (transform.position.y <= 0) 
+			{
+				LifeTimerLimit = 0.0f;
+			}
+
+			if (LifeTimerLimit <= 0.0f) 
+			{
+				//change scene
+			}
+
+
+
 		}
 
 		void HandleStateChanged () {
