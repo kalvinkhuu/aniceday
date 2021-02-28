@@ -1,0 +1,146 @@
+
+Blue_character.png
+size: 757,204
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L arm
+  rotate: true
+  xy: 587, 43
+  size: 38, 105
+  orig: 38, 105
+  offset: 0, 0
+  index: -1
+L foot
+  rotate: false
+  xy: 688, 145
+  size: 62, 57
+  orig: 62, 57
+  offset: 0, 0
+  index: -1
+L forearm
+  rotate: true
+  xy: 688, 105
+  size: 38, 67
+  orig: 38, 67
+  offset: 0, 0
+  index: -1
+L hand
+  rotate: false
+  xy: 189, 4
+  size: 24, 32
+  orig: 24, 32
+  offset: 0, 0
+  index: -1
+L thigh
+  rotate: true
+  xy: 437, 5
+  size: 58, 87
+  orig: 58, 87
+  offset: 0, 0
+  index: -1
+L tibia
+  rotate: true
+  xy: 664, 5
+  size: 36, 73
+  orig: 36, 73
+  offset: 0, 0
+  index: -1
+R arm
+  rotate: true
+  xy: 333, 7
+  size: 49, 102
+  orig: 49, 102
+  offset: 0, 0
+  index: -1
+R foot
+  rotate: true
+  xy: 526, 2
+  size: 69, 59
+  orig: 69, 59
+  offset: 0, 0
+  index: -1
+R forearm
+  rotate: true
+  xy: 587, 4
+  size: 37, 75
+  orig: 37, 75
+  offset: 0, 0
+  index: -1
+R hand
+  rotate: true
+  xy: 149, 8
+  size: 28, 38
+  orig: 28, 38
+  offset: 0, 0
+  index: -1
+R thigh
+  rotate: true
+  xy: 216, 9
+  size: 47, 115
+  orig: 47, 115
+  offset: 0, 0
+  index: -1
+bottom shirt
+  rotate: true
+  xy: 460, 73
+  size: 129, 109
+  orig: 129, 109
+  offset: 0, 0
+  index: -1
+chest
+  rotate: false
+  xy: 571, 83
+  size: 115, 119
+  orig: 115, 119
+  offset: 0, 0
+  index: -1
+eyebrows
+  rotate: false
+  xy: 74, 21
+  size: 73, 15
+  orig: 73, 15
+  offset: 0, 0
+  index: -1
+eyes open
+  rotate: false
+  xy: 2, 3
+  size: 70, 33
+  orig: 70, 33
+  offset: 0, 0
+  index: -1
+hair
+  rotate: true
+  xy: 342, 65
+  size: 137, 116
+  orig: 137, 116
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 216, 58
+  size: 124, 144
+  orig: 124, 144
+  offset: 0, 0
+  index: -1
+mouth closed
+  rotate: true
+  xy: 74, 4
+  size: 15, 9
+  orig: 15, 9
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 694, 54
+  size: 41, 49
+  orig: 41, 49
+  offset: 0, 0
+  index: -1
+sword
+  rotate: true
+  xy: 2, 38
+  size: 164, 212
+  orig: 164, 212
+  offset: 0, 0
+  index: -1
