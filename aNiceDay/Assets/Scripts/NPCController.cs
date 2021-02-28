@@ -207,7 +207,8 @@ namespace Spine.Unity.Examples {
 			if (amountOfTimeGettingHit == maxHitpoints) 
 			{
 				Destroy(gameObject);
-				//playerController.AddBadDeed();
+				playerController.AddBadDeed();
+
 			}
 
 			bool stateChanged = previousState != currentState;

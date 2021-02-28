@@ -100,17 +100,27 @@ namespace Spine.Unity.Examples
         CharacterState previousState, currentState;
 
         // SCORE OF THE DEEDS
-        public int GoodDeeds = 0;
-        public int BadDeeds = 0;
+        public static int GoodDeeds = 0;
+        public static int BadDeeds = 0;
+
+        public static int murderSins = 0;
+        public static int stealOrGiveMoney = 0;
+        public static int stealOrGiveFood = 0;
+
+        public static int helpingPeople = 0;
+
+        public int amountMoney = 0;
+        public int amountFood = 0; 
 
         private Interactable InteractingObject = null;
 
-
-
+        private House houseEntered = null;
+        private bool isInsideHouse = false;
         void Start()
         {
             LifeTimerLimit = 180;
             playerWeapon = GetComponentInChildren<PlayerWeapon>();
+            
         }
 
         void Update()
@@ -132,11 +142,7 @@ namespace Spine.Unity.Examples
             // Input for the attack 
             bool inputAttackStart = Input.GetButtonDown(AttackButton);
             bool inputAttackStop = Input.GetButtonUp(AttackButton);
-
-            // Variables for the interaction
-
-            bool isInteractable = false;
-            transform.position.Set(transform.position.x, transform.position.y, 0.0f);
+            
 
             if (landed)
             {
@@ -284,7 +290,7 @@ namespace Spine.Unity.Examples
                 SceneManager.LoadScene("TransitionScene");
             }
 
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetButtonDown("Interact"))
             {
                 if (InteractingObject != null)
                 {
@@ -292,6 +298,31 @@ namespace Spine.Unity.Examples
                 }
             }
 
+            if (Input.GetButtonDown("Exit"))
+            {
+                if (isInsideHouse && houseEntered != null)
+                {
+                    houseEntered.SetDoorOpened(false);
+                    isInsideHouse = false;
+                }
+            }
+
+            if (InteractingObject != null && InteractingObject.GetIsInteracting()) 
+            {
+                
+                if (houseEntered != null) 
+                {
+                    houseEntered.SetDoorOpened(true);
+                    isInsideHouse = true;
+                }
+                
+            }
+
+        }
+
+        private void LateUpdate()
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, isInsideHouse ? houseEntered.GetPlaceToStandInHouse() : 0.0f);
         }
 
         void HandleStateChanged()
@@ -348,23 +379,83 @@ namespace Spine.Unity.Examples
             return BadDeeds;
         }
 
-        void SetFocus(Interactable newFocus) 
+        public void AddMurderDeed()
         {
-            focus = newFocus;
+            murderSins++;
         }
+
+        public int GetMurderDeed()
+        {
+            return murderSins;
+        }
+
+        public void AddHelpingDeed()
+        {
+            helpingPeople++;
+        }
+
+        public int GetHelpingDeed()
+        {
+            return helpingPeople;
+        }
+
+        public void StealMoneyDeed()
+        {
+            stealOrGiveMoney--;
+        }
+
+        public void GiveMoneyDeed() 
+        {
+            stealOrGiveMoney++;
+            stealOrGiveMoney++;
+
+        }
+
+        public int GetMoneyDeed()
+        {
+            return stealOrGiveMoney;
+        }
+
+        public void StealFoodDeed()
+        {
+            stealOrGiveFood--;
+        }
+
+        public void GiveFoodDeed()
+        {
+            stealOrGiveFood++;
+            stealOrGiveFood++;
+
+        }
+
+        public int GetFoodDeed()
+        {
+            return stealOrGiveFood;
+        }
+
+
 
         private void OnTriggerEnter(Collider other)
         {
-            InteractingObject = other.GetComponent<Interactable>();
+            Interactable Interaction = other.GetComponent<Interactable>();
+            if (Interaction != null)
+            {
+                InteractingObject = Interaction;
+                houseEntered = InteractingObject.GetComponent<House>();
+            }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (InteractingObject != null)
+            Interactable Interaction = other.GetComponent<Interactable>();
+            if (Interaction != null)
             {
-                InteractingObject.SetInteracting(false);
+                if (InteractingObject != null)
+                {
+                    InteractingObject.SetInteracting(false);
+                }
+                InteractingObject = null;
             }
-            InteractingObject = null;
         }
 
     }
