@@ -98,7 +98,7 @@ namespace Spine.Unity.Examples {
 		CharacterState previousState, currentState;
 		private GameObject playerGameObject;
 		private PlayerController playerController;
-		
+		private Interactable interactable;
 
 		void Start()
 		{
@@ -207,7 +207,7 @@ namespace Spine.Unity.Examples {
 			if (amountOfTimeGettingHit == maxHitpoints) 
 			{
 				Destroy(gameObject);
-				playerController.SetBadDeed(1);
+				//playerController.AddBadDeed();
 			}
 
 			bool stateChanged = previousState != currentState;
@@ -222,6 +222,10 @@ namespace Spine.Unity.Examples {
 			if (input.x != 0)
 				animationHandle.SetFlip(input.x);
 
+			if (interactable != null && interactable.GetIsInteracting()) 
+			{
+				
+			}
 			
 
 		}

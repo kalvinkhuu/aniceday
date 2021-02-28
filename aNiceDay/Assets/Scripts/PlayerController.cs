@@ -39,6 +39,10 @@ namespace Spine.Unity.Examples
     public class PlayerController : MonoBehaviour
     {
 
+        public Interactable focus;
+        public LayerMask movementMask;
+        
+
         public enum CharacterState
         {
             None,
@@ -98,6 +102,10 @@ namespace Spine.Unity.Examples
         // SCORE OF THE DEEDS
         public int GoodDeeds = 0;
         public int BadDeeds = 0;
+
+        private Interactable InteractingObject = null;
+
+
 
         void Start()
         {
@@ -276,8 +284,13 @@ namespace Spine.Unity.Examples
                 SceneManager.LoadScene("TransitionScene");
             }
 
-
-
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (InteractingObject != null)
+                {
+                    InteractingObject.SetInteracting(true);
+                }
+            }
 
         }
 
@@ -315,24 +328,43 @@ namespace Spine.Unity.Examples
             animationHandle.PlayAnimationForState(stateName, 0);
         }
 
-        public void SetGoodDeed(int something) 
+        public void AddGoodDeed() 
         {
-            GoodDeeds += something;
+            GoodDeeds++;
         }
 
-        public int getGoodDeed() 
+        public int GetGoodDeed() 
         {
             return GoodDeeds;
         }
 
-        public void SetBadDeed(int someElse)
+        public void AddBadDeed()
         {
-            BadDeeds += someElse;
+            BadDeeds++;
         }
 
-        public int getBadDeed()
+        public int GetBadDeed()
         {
             return BadDeeds;
+        }
+
+        void SetFocus(Interactable newFocus) 
+        {
+            focus = newFocus;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            InteractingObject = other.GetComponent<Interactable>();
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (InteractingObject != null)
+            {
+                InteractingObject.SetInteracting(false);
+            }
+            InteractingObject = null;
         }
 
     }
