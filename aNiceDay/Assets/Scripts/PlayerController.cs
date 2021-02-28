@@ -124,7 +124,10 @@ namespace Spine.Unity.Examples
         void Start()
         {
             currentHealth = LifeTimerLimit;
-            healthBar.SetMaxHealth(LifeTimerLimit);
+            if (healthBar)
+            {
+                healthBar.SetMaxHealth(LifeTimerLimit);
+            }
             playerWeapon = GetComponentInChildren<PlayerWeapon>();
             
         }
