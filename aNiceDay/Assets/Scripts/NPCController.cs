@@ -96,8 +96,9 @@ namespace Spine.Unity.Examples {
 		bool wasGrounded = false;
 		float movementTimer = 0.0f;
 		CharacterState previousState, currentState;
-
-		private PlayerWeapon p;
+		private GameObject playerGameObject;
+		private PlayerController playerController;
+		
 
 		void Start()
 		{
@@ -105,7 +106,8 @@ namespace Spine.Unity.Examples {
 			{
 				input.x = 0.5f;
 			}
-			
+			playerGameObject = GameObject.FindGameObjectWithTag("Player");
+			playerController = playerGameObject.GetComponent<PlayerController>();
 		}
 
 		void Update () {
@@ -205,6 +207,7 @@ namespace Spine.Unity.Examples {
 			if (amountOfTimeGettingHit == maxHitpoints) 
 			{
 				Destroy(gameObject);
+				playerController.SetBadDeed(1);
 			}
 
 			bool stateChanged = previousState != currentState;

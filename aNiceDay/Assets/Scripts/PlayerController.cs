@@ -95,6 +95,10 @@ namespace Spine.Unity.Examples
 
         CharacterState previousState, currentState;
 
+        // SCORE OF THE DEEDS
+        public int GoodDeeds = 0;
+        public int BadDeeds = 0;
+
         void Start()
         {
             LifeTimerLimit = 180;
@@ -310,5 +314,26 @@ namespace Spine.Unity.Examples
 
             animationHandle.PlayAnimationForState(stateName, 0);
         }
+
+        public void SetGoodDeed(int something) 
+        {
+            GoodDeeds += something;
+        }
+
+        public int getGoodDeed() 
+        {
+            return GoodDeeds;
+        }
+
+        public void SetBadDeed(int someElse)
+        {
+            BadDeeds += someElse;
+        }
+
+        public int getBadDeed()
+        {
+            return BadDeeds;
+        }
+
     }
 }
