@@ -286,6 +286,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.6591009
       objectReference: {fileID: 0}
+    - target: {fileID: 5825876196744852690, guid: d80dea82c67da9c418f42c6e44e22680,
+        type: 3}
+      propertyPath: initialSkinName
+      value: villager girl 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825876196744852692, guid: d80dea82c67da9c418f42c6e44e22680,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1faa522e4700194795c5f53cfd9699a, type: 2}
     - target: {fileID: 5825876196744852695, guid: d80dea82c67da9c418f42c6e44e22680,
         type: 3}
       propertyPath: m_Mesh
@@ -614,7 +624,7 @@ PrefabInstance:
     - target: {fileID: 1743292616458988033, guid: c477b2fd68b36bd4eb1bd5ccda3214dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.69
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1743292616458988033, guid: c477b2fd68b36bd4eb1bd5ccda3214dd,
         type: 3}
@@ -1001,8 +1011,7 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2716712637925073401, guid: bae9351c4e0ec87499dc3990c7013aac, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bae9351c4e0ec87499dc3990c7013aac, type: 3}
 --- !u!1001 &5825876197108102121
 PrefabInstance:
@@ -1013,18 +1022,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5825876195929681643, guid: d80dea82c67da9c418f42c6e44e22680,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.048999786
-      objectReference: {fileID: 0}
-    - target: {fileID: 5825876195961721495, guid: d80dea82c67da9c418f42c6e44e22680,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.6590996
+      propertyPath: m_LocalPosition.y
+      value: 1.5563126
       objectReference: {fileID: 0}
     - target: {fileID: 5825876195961721495, guid: d80dea82c67da9c418f42c6e44e22680,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.089700066
+      value: 1.5563126
       objectReference: {fileID: 0}
     - target: {fileID: 5825876196744852695, guid: d80dea82c67da9c418f42c6e44e22680,
         type: 3}
@@ -1049,7 +1053,7 @@ PrefabInstance:
     - target: {fileID: 5825876197218045198, guid: d80dea82c67da9c418f42c6e44e22680,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.49
+      value: 2.76
       objectReference: {fileID: 0}
     - target: {fileID: 5825876197218045198, guid: d80dea82c67da9c418f42c6e44e22680,
         type: 3}

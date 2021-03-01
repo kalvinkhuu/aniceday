@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 5825876196744852693}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,7 +498,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 03debaa81a50e10478bdbe7a02f12e9f, type: 2}
+  - {fileID: 2100000, guid: a1faa522e4700194795c5f53cfd9699a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -531,8 +531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: a86db0a4e28671a4f8831d82f7306bf5, type: 2}
-  initialSkinName: 
+  skeletonDataAsset: {fileID: 11400000, guid: 35274c46b8b35e646a9ba40fe8d1954e, type: 2}
+  initialSkinName: villager boy
   initialFlipX: 0
   initialFlipY: 0
   updateWhenInvisible: 3
@@ -847,19 +847,19 @@ MonoBehaviour:
   skeletonAnimation: {fileID: 5825876196744852690}
   statesAndAnimations:
   - stateName: walk
-    animation: {fileID: 11400000, guid: 9fdec469954b97745bca5e0d082302ed, type: 2}
+    animation: {fileID: 11400000, guid: 157a7ab1986adee429f18f5cd239f0fb, type: 2}
   - stateName: run
-    animation: {fileID: 11400000, guid: cc83238c61de380499565292bef7ada4, type: 2}
+    animation: {fileID: 11400000, guid: 9fdec469954b97745bca5e0d082302ed, type: 2}
   - stateName: idle
-    animation: {fileID: 11400000, guid: 8e32f0310bb5c02488c5c002dd41e7cb, type: 2}
+    animation: {fileID: 11400000, guid: 21d7fb30e1348b84bbb1e4cd63e3f402, type: 2}
   - stateName: crouch
-    animation: {fileID: 11400000, guid: 25961ff211f6f3947be85f8aab3f2630, type: 2}
+    animation: {fileID: 11400000, guid: 495903c792aa6f04d9087a70f3bd578d, type: 2}
   - stateName: rise
-    animation: {fileID: 11400000, guid: 9fc9ad17b39175242a17dedc100251e5, type: 2}
+    animation: {fileID: 11400000, guid: 80ede816892509d4ea959c116f3edfc6, type: 2}
   - stateName: fall
-    animation: {fileID: 11400000, guid: 29c1381a00cfb2c4d996f2a02fcc4506, type: 2}
+    animation: {fileID: 11400000, guid: d1e72d817d503954eb106914c9ac78e9, type: 2}
   - stateName: attack
-    animation: {fileID: 11400000, guid: a7f08ab57415c7548a57933fe9332cf0, type: 2}
+    animation: {fileID: 11400000, guid: 75ea8167d90ac504d9285ac36c96be41, type: 2}
   transitions:
   - from: {fileID: 11400000, guid: 29c1381a00cfb2c4d996f2a02fcc4506, type: 2}
     to: {fileID: 11400000, guid: 25961ff211f6f3947be85f8aab3f2630, type: 2}

@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c690eec62caa1f247b302548660b7e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HouseZ: 4
+  HouseZ: 3
 --- !u!114 &440254832997268251
 MonoBehaviour:
   m_ObjectHideFlags: 0
