@@ -84,6 +84,7 @@ namespace Spine.Unity.Examples {
 		[Header("NPC Options")]
 		public bool doesPatrol = true;
 		public bool isInteractable = true;
+        public bool inHouse = false;
 
 		[Header("Animation")]
 		public SkeletonAnimationHandleExample animationHandle;
@@ -234,7 +235,7 @@ namespace Spine.Unity.Examples {
 
 		private void LateUpdate()
 		{
-			transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
+			transform.position = new Vector3(transform.position.x, transform.position.y, inHouse ? 3.0f : 0.0f);
 		}
 
 		private void OnTriggerEnter(Collider other)
