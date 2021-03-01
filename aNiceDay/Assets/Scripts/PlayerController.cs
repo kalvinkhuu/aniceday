@@ -298,7 +298,7 @@ namespace Spine.Unity.Examples
 
             if (currentHealth <= 10)
             {
-                SceneManager.LoadScene("TransitionScene");
+                SceneManager.LoadScene(1);
             }
 
             if (Input.GetButtonDown("Interact"))
@@ -330,7 +330,7 @@ namespace Spine.Unity.Examples
                     houseEntered.SetDoorOpened(true);
                     isInsideHouse = true;
                 }
-                else if (foodStolen != null)
+                if (foodStolen != null)
                 {
                     AddBadDeed();
                     GameObject.Destroy(foodStolen.gameObject);
@@ -512,6 +512,12 @@ namespace Spine.Unity.Examples
                     if (!isInsideHouse && HouseHit == houseEntered && HouseHit != null)
                     {
                         houseEntered = null;
+                    }
+
+                    FoodStolen stolenFood = InteractingObject.GetComponent<FoodStolen>();
+                    if (stolenFood != null)
+                    {
+                        foodStolen = null;
                     }
                 }
                 InteractingObject = null;
