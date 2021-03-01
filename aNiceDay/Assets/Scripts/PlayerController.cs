@@ -145,7 +145,7 @@ namespace Spine.Unity.Examples
             input.y = Input.GetAxis(YAxis);
             bool inputJumpStop = Input.GetButtonUp(JumpButton);
             bool inputJumpStart = Input.GetButtonDown(JumpButton);
-            bool doCrouch = (isGrounded && input.y < -0.5f) || (forceCrouchEndTime > Time.time);
+            bool doCrouch = (isGrounded && input.y < -0.5f) || (forceCrouchEndTime > Time.timeSinceLevelLoad);
             bool doJumpInterrupt = false;
             bool doJump = false;
             bool hardLand = false;
@@ -161,7 +161,7 @@ namespace Spine.Unity.Examples
                 {
                     hardLand = true;
                     doCrouch = true;
-                    forceCrouchEndTime = Time.time + forceCrouchDuration;
+                    forceCrouchEndTime = Time.timeSinceLevelLoad + forceCrouchDuration;
                 }
             }
 
@@ -176,7 +176,7 @@ namespace Spine.Unity.Examples
                 }
                 else
                 {
-                    doJumpInterrupt = inputJumpStop && Time.time < minimumJumpEndTime;
+                    doJumpInterrupt = inputJumpStop && Time.timeSinceLevelLoad < minimumJumpEndTime;
                 }
             }
 
@@ -186,7 +186,7 @@ namespace Spine.Unity.Examples
             if (doJump)
             {
                 velocity.y = jumpSpeed;
-                minimumJumpEndTime = Time.time + minimumJumpDuration;
+                minimumJumpEndTime = Time.timeSinceLevelLoad + minimumJumpDuration;
             }
             else if (doJumpInterrupt)
             {
@@ -347,7 +347,7 @@ namespace Spine.Unity.Examples
 
             if (healthBar)
             {
-                currentHealth = LifeTimerLimit - (int)Time.time;
+                currentHealth = LifeTimerLimit - (int)Time.timeSinceLevelLoad;
                 healthBar.SetHealth(currentHealth);
             }
 

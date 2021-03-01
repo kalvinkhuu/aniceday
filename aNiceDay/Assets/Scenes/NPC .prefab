@@ -5284,7 +5284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 35274c46b8b35e646a9ba40fe8d1954e, type: 2}
-  initialSkinName: villager boy
+  initialSkinName: Villager 5
   initialFlipX: 0
   initialFlipY: 0
   updateWhenInvisible: 3

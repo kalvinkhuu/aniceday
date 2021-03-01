@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "KEPQqVUXvce0XDn47kd6HOLa6Pc",
+	"hash": "Wdvkjj5ZU/yjnFkwawnShcFMXeY",
 	"spine": "3.8.99",
-	"x": -105.21,
+	"x": -83.75,
 	"y": -0.97,
-	"width": 179.38,
-	"height": 446.82,
+	"width": 157.92,
+	"height": 435.32,
 	"images": "./images/",
 	"audio": "C:/Users/Krystal/Documents/hackathon2/Source/Character"
 },
@@ -147,7 +147,7 @@
 	{ "name": "eyes open", "parent": "eyes control", "length": 16.78, "rotation": 10.15, "x": -17.8, "y": -22.93 },
 	{ "name": "mouth closed", "parent": "head", "length": 16.71, "rotation": 75.69, "x": 19.8, "y": -18.08 },
 	{ "name": "head-front-control", "parent": "head", "rotation": -87.98, "x": 48.69, "y": -13.25, "color": "abe323ff" },
-	{ "name": "head-back-control", "parent": "head", "rotation": -87.98, "x": 88.18, "y": 26.26 },
+	{ "name": "head-back-control", "parent": "head", "rotation": -87.98, "x": 87.8, "y": 36.91 },
 	{ "name": "L foot tip IK", "parent": "root", "x": 65.91, "y": 8.97, "color": "ff3f00ff" },
 	{ "name": "L foot bend IK", "parent": "L foot tip IK", "x": -32.33, "y": 0.17, "color": "ff3f00ff" },
 	{ "name": "L leg ankle IK", "parent": "L foot bend IK", "x": -11.66, "y": 23.72, "color": "ff3f00ff" },
@@ -287,6 +287,74 @@
 ],
 "skins": [
 	{
+		"name": "Villager 5",
+		"attachments": {
+			"L arm": {
+				"L arm": { "path": "Villager 5/L arm", "x": 47.2, "y": 1.98, "rotation": 81.27, "width": 36, "height": 91 }
+			},
+			"L foot": {
+				"L foot": { "type": "linkedmesh", "path": "Villager 5/L foot", "skin": "main character", "parent": "L foot", "width": 60, "height": 55 }
+			},
+			"L forearm": {
+				"L forearm": { "path": "Villager 5/L forearm", "x": 17.21, "y": -0.56, "rotation": 83.02, "width": 36, "height": 65 }
+			},
+			"L hand": {
+				"L hand": { "path": "Villager 5/L hand", "x": 5.53, "y": 0.91, "rotation": 85.24, "width": 22, "height": 30 }
+			},
+			"L thigh": {
+				"L thigh": { "path": "Villager 5/L thigh", "x": 35.44, "y": -7.26, "rotation": 84.52, "width": 56, "height": 85 }
+			},
+			"L tibia": {
+				"L tibia": { "type": "linkedmesh", "path": "Villager 5/L tibia", "skin": "main character", "parent": "L tibia", "width": 34, "height": 71 }
+			},
+			"R arm": {
+				"R arm": { "path": "Villager 5/R arm", "x": 46.78, "y": -1.33, "rotation": 102.46, "width": 47, "height": 100 }
+			},
+			"R foot2": {
+				"R foot": { "type": "linkedmesh", "path": "Villager 5/R foot", "skin": "main character", "parent": "R foot", "width": 67, "height": 57 }
+			},
+			"R forearm": {
+				"R forearm": { "path": "Villager 5/R forearm", "x": 32.58, "y": 0.69, "rotation": 85.14, "width": 30, "height": 73 }
+			},
+			"R hand": {
+				"R hand": { "path": "Villager 5/R hand", "x": 11.8, "y": 2.83, "rotation": 71.4, "width": 26, "height": 36 }
+			},
+			"R thigh": {
+				"R thigh": { "path": "Villager 5/R thigh", "x": 24.77, "y": 0.75, "rotation": 89.37, "width": 44, "height": 122 }
+			},
+			"R tibia": {
+				"L tibia": { "type": "linkedmesh", "path": "Villager 5/L tibia", "skin": "main character", "parent": "L tibia", "width": 34, "height": 71 }
+			},
+			"bottom shirt": {
+				"bottom shirt": { "type": "linkedmesh", "path": "Villager 5/bottom shirt", "skin": "main character", "parent": "bottom shirt", "width": 127, "height": 107 }
+			},
+			"chest": {
+				"chest": { "type": "linkedmesh", "path": "Villager 5/chest", "skin": "main character", "parent": "chest", "width": 111, "height": 117 }
+			},
+			"eyebrows": {
+				"eyebrows": { "path": "Villager 5/eyebrow", "x": 33.84, "y": -6.09, "rotation": 161.34, "width": 71, "height": 13 }
+			},
+			"eyes open": {
+				"eyes open": { "path": "Villager 5/eyes open", "x": 10.23, "y": 22.58, "rotation": -98.13, "width": 68, "height": 31 }
+			},
+			"hair": {
+				"hair": { "path": "Villager 5/hair", "x": 40.18, "y": 32.18, "rotation": 162.24, "width": 110, "height": 96 }
+			},
+			"head": {
+				"head": { "type": "linkedmesh", "path": "Villager 5/head", "skin": "main character", "parent": "head", "width": 122, "height": 142 }
+			},
+			"mouth closed": {
+				"mouth closed": { "path": "Villager 5/mouth closed", "x": -54.42, "y": -7.9, "rotation": -87.98, "width": 13, "height": 7 }
+			},
+			"neck": {
+				"neck": { "path": "Villager 5/neck", "x": 14.76, "y": 3.09, "rotation": -99.74, "width": 39, "height": 47 }
+			},
+			"sword": {
+				"sword": { "path": "Villager 5/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 71, "height": 13 }
+			}
+		}
+	},
+	{
 		"name": "angel",
 		"attachments": {
 			"L arm": {
@@ -419,6 +487,74 @@
 			},
 			"sword": {
 				"sword": { "path": "Demon/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 162, "height": 210 }
+			}
+		}
+	},
+	{
+		"name": "demon monster",
+		"attachments": {
+			"L arm": {
+				"L arm": { "path": "demon monster/L arm", "x": 47.2, "y": 1.98, "rotation": 81.27, "width": 27, "height": 36 }
+			},
+			"L foot": {
+				"L foot": { "type": "linkedmesh", "path": "demon monster/L foot", "skin": "main character", "parent": "L foot", "width": 32, "height": 29 }
+			},
+			"L forearm": {
+				"L forearm": { "path": "demon monster/L forearm", "x": 17.21, "y": -0.56, "rotation": 83.02, "width": 26, "height": 29 }
+			},
+			"L hand": {
+				"L hand": { "path": "demon monster/L hand", "x": 5.53, "y": 0.91, "rotation": 85.24, "width": 21, "height": 22 }
+			},
+			"L thigh": {
+				"L thigh": { "path": "demon monster/L thigh", "x": 35.44, "y": -7.26, "rotation": 84.52, "width": 19, "height": 40 }
+			},
+			"L tibia": {
+				"L tibia": { "type": "linkedmesh", "path": "demon monster/L tibia", "skin": "main character", "parent": "L tibia", "width": 15, "height": 32 }
+			},
+			"R arm": {
+				"R arm": { "path": "demon monster/R arm", "x": 46.78, "y": -1.33, "rotation": 102.46, "width": 34, "height": 34 }
+			},
+			"R foot2": {
+				"R foot": { "type": "linkedmesh", "path": "demon monster/R foot", "skin": "main character", "parent": "R foot", "width": 31, "height": 31 }
+			},
+			"R forearm": {
+				"R forearm": { "path": "demon monster/R forearm", "x": 32.58, "y": 0.69, "rotation": 85.14, "width": 15, "height": 34 }
+			},
+			"R hand": {
+				"R hand": { "path": "demon monster/R hand", "x": 11.8, "y": 2.83, "rotation": 71.4, "width": 19, "height": 23 }
+			},
+			"R thigh": {
+				"R thigh": { "path": "demon monster/R thigh", "x": 24.77, "y": 0.75, "rotation": 89.37, "width": 16, "height": 34 }
+			},
+			"R tibia": {
+				"L tibia": { "type": "linkedmesh", "path": "demon monster/L tibia", "skin": "main character", "parent": "L tibia", "width": 15, "height": 32 }
+			},
+			"bottom shirt": {
+				"bottom shirt": { "type": "linkedmesh", "path": "demon monster/bottom shirt", "skin": "main character", "parent": "bottom shirt", "width": 104, "height": 53 }
+			},
+			"chest": {
+				"chest": { "type": "linkedmesh", "path": "demon monster/chest", "skin": "main character", "parent": "chest", "width": 196, "height": 178 }
+			},
+			"eyebrows": {
+				"eyebrows": { "path": "demon monster/eyebrows", "x": 33.84, "y": -6.09, "rotation": 161.34, "width": 95, "height": 24 }
+			},
+			"eyes open": {
+				"eyes open": { "path": "demon monster/eyes open", "x": 10.23, "y": 22.58, "rotation": -98.13, "width": 93, "height": 32 }
+			},
+			"hair": {
+				"hair": { "path": "demon monster/hair", "x": 53.93, "y": 27.78, "rotation": 162.24, "width": 71, "height": 13 }
+			},
+			"head": {
+				"head": { "type": "linkedmesh", "path": "demon monster/head", "skin": "main character", "parent": "head", "width": 148, "height": 133 }
+			},
+			"mouth closed": {
+				"mouth closed": { "path": "demon monster/mouth closed", "x": -54.42, "y": -7.9, "rotation": -87.98, "width": 73, "height": 10 }
+			},
+			"neck": {
+				"neck": { "path": "demon monster/neck", "x": 14.76, "y": 3.09, "rotation": -99.74, "width": 22, "height": 36 }
+			},
+			"sword": {
+				"sword": { "path": "demon monster/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 71, "height": 13 }
 			}
 		}
 	},
@@ -557,6 +693,142 @@
 			},
 			"sword": {
 				"sword": { "path": "Main character/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 164, "height": 212 }
+			}
+		}
+	},
+	{
+		"name": "villager 3",
+		"attachments": {
+			"L arm": {
+				"L arm": { "path": "Villager 3/L arm", "x": 47.2, "y": 1.98, "rotation": 81.27, "width": 36, "height": 103 }
+			},
+			"L foot": {
+				"L foot": { "type": "linkedmesh", "path": "Villager 3/L foot", "skin": "main character", "parent": "L foot", "width": 60, "height": 55 }
+			},
+			"L forearm": {
+				"L forearm": { "path": "Villager 3/L forearm", "x": 17.21, "y": -0.56, "rotation": 83.02, "width": 36, "height": 65 }
+			},
+			"L hand": {
+				"L hand": { "path": "Villager 3/L hand", "x": 5.53, "y": 0.91, "rotation": 85.24, "width": 22, "height": 30 }
+			},
+			"L thigh": {
+				"L thigh": { "path": "Villager 3/L thigh", "x": 35.44, "y": -7.26, "rotation": 84.52, "width": 56, "height": 85 }
+			},
+			"L tibia": {
+				"L tibia": { "type": "linkedmesh", "path": "Villager 3/L tibia", "skin": "main character", "parent": "L tibia", "width": 34, "height": 71 }
+			},
+			"R arm": {
+				"R arm": { "path": "Villager 3/R arm", "x": 46.78, "y": -1.33, "rotation": 102.46, "width": 47, "height": 100 }
+			},
+			"R foot2": {
+				"R foot": { "type": "linkedmesh", "path": "Villager 3/R foot", "skin": "main character", "parent": "R foot", "width": 67, "height": 57 }
+			},
+			"R forearm": {
+				"R forearm": { "path": "Villager 3/R forearm", "x": 32.58, "y": 0.69, "rotation": 85.14, "width": 31, "height": 73 }
+			},
+			"R hand": {
+				"R hand": { "path": "Villager 3/R hand", "x": 11.8, "y": 2.83, "rotation": 71.4, "width": 26, "height": 36 }
+			},
+			"R thigh": {
+				"R thigh": { "path": "Villager 3/R thigh", "x": 24.77, "y": 0.75, "rotation": 89.37, "width": 44, "height": 113 }
+			},
+			"R tibia": {
+				"L tibia": { "type": "linkedmesh", "path": "Villager 3/L tibia", "skin": "main character", "parent": "L tibia", "width": 34, "height": 71 }
+			},
+			"bottom shirt": {
+				"bottom shirt": { "type": "linkedmesh", "path": "Villager 3/bottom shirt", "skin": "main character", "parent": "bottom shirt", "width": 127, "height": 107 }
+			},
+			"chest": {
+				"chest": { "type": "linkedmesh", "path": "Villager 3/chest", "skin": "main character", "parent": "chest", "width": 113, "height": 117 }
+			},
+			"eyebrows": {
+				"eyebrows": { "path": "Villager 3/eyebrow", "x": 33.84, "y": -6.09, "rotation": 161.34, "width": 71, "height": 13 }
+			},
+			"eyes open": {
+				"eyes open": { "path": "Villager 3/eyes open", "x": 10.23, "y": 22.58, "rotation": -98.13, "width": 68, "height": 31 }
+			},
+			"hair": {
+				"hair": { "path": "Villager 3/hair", "x": 39.72, "y": 25.39, "rotation": 162.24, "width": 96, "height": 75 }
+			},
+			"head": {
+				"head": { "type": "linkedmesh", "path": "Villager 3/head", "skin": "main character", "parent": "head", "width": 122, "height": 142 }
+			},
+			"mouth closed": {
+				"mouth closed": { "path": "Villager 3/mouth closed", "x": -54.42, "y": -7.9, "rotation": -87.98, "width": 13, "height": 7 }
+			},
+			"neck": {
+				"neck": { "path": "Villager 3/neck", "x": 14.76, "y": 3.09, "rotation": -99.74, "width": 39, "height": 47 }
+			},
+			"sword": {
+				"sword": { "path": "Villager 3/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 71, "height": 13 }
+			}
+		}
+	},
+	{
+		"name": "villager 4",
+		"attachments": {
+			"L arm": {
+				"L arm": { "path": "villager 4/L arm", "x": 47.2, "y": 1.98, "rotation": 81.27, "width": 36, "height": 91 }
+			},
+			"L foot": {
+				"L foot": { "type": "linkedmesh", "path": "villager 4/L foot", "skin": "main character", "parent": "L foot", "width": 60, "height": 55 }
+			},
+			"L forearm": {
+				"L forearm": { "path": "villager 4/L forearm", "x": 17.21, "y": -0.56, "rotation": 83.02, "width": 36, "height": 65 }
+			},
+			"L hand": {
+				"L hand": { "path": "villager 4/L hand", "x": 5.53, "y": 0.91, "rotation": 85.24, "width": 22, "height": 30 }
+			},
+			"L thigh": {
+				"L thigh": { "path": "villager 4/L thigh", "x": 35.44, "y": -7.26, "rotation": 84.52, "width": 56, "height": 93 }
+			},
+			"L tibia": {
+				"L tibia": { "type": "linkedmesh", "path": "villager 4/L tibia", "skin": "main character", "parent": "L tibia", "width": 34, "height": 71 }
+			},
+			"R arm": {
+				"R arm": { "path": "villager 4/R arm", "x": 46.78, "y": -1.33, "rotation": 102.46, "width": 47, "height": 100 }
+			},
+			"R foot2": {
+				"R foot": { "type": "linkedmesh", "path": "villager 4/R foot", "skin": "main character", "parent": "R foot", "width": 67, "height": 57 }
+			},
+			"R forearm": {
+				"R forearm": { "path": "villager 4/R forearm", "x": 32.58, "y": 0.69, "rotation": 85.14, "width": 31, "height": 73 }
+			},
+			"R hand": {
+				"R hand": { "path": "villager 4/R hand", "x": 11.8, "y": 2.83, "rotation": 71.4, "width": 26, "height": 36 }
+			},
+			"R thigh": {
+				"R thigh": { "path": "villager 4/R thigh", "x": 24.77, "y": 0.75, "rotation": 89.37, "width": 44, "height": 117 }
+			},
+			"R tibia": {
+				"L tibia": { "type": "linkedmesh", "path": "villager 4/L tibia", "skin": "main character", "parent": "L tibia", "width": 34, "height": 71 }
+			},
+			"bottom shirt": {
+				"bottom shirt": { "type": "linkedmesh", "path": "villager 4/bottom shirt", "skin": "main character", "parent": "bottom shirt", "width": 127, "height": 107 }
+			},
+			"chest": {
+				"chest": { "type": "linkedmesh", "path": "villager 4/chest", "skin": "main character", "parent": "chest", "width": 113, "height": 117 }
+			},
+			"eyebrows": {
+				"eyebrows": { "path": "villager 4/eyebrows", "x": 33.84, "y": -6.09, "rotation": 161.34, "width": 71, "height": 13 }
+			},
+			"eyes open": {
+				"eyes open": { "path": "villager 4/eyesopen", "x": 10.23, "y": 22.58, "rotation": -98.13, "width": 68, "height": 31 }
+			},
+			"hair": {
+				"hair": { "path": "villager 4/hair", "x": 58.03, "y": 64.08, "rotation": 162.24, "width": 109, "height": 161 }
+			},
+			"head": {
+				"head": { "type": "linkedmesh", "path": "villager 4/head", "skin": "main character", "parent": "head", "width": 122, "height": 142 }
+			},
+			"mouth closed": {
+				"mouth closed": { "path": "villager 4/mouth closed", "x": -54.42, "y": -7.9, "rotation": -87.98, "width": 18, "height": 10 }
+			},
+			"neck": {
+				"neck": { "path": "villager 4/neck", "x": 14.76, "y": 3.09, "rotation": -99.74, "width": 39, "height": 47 }
+			},
+			"sword": {
+				"sword": { "path": "villager 4/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 71, "height": 13 }
 			}
 		}
 	},
