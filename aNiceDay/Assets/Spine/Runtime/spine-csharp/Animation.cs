@@ -1058,6 +1058,10 @@ namespace Spine {
 
 		override public void Apply (Skeleton skeleton, float lastTime, float time, ExposedList<Event> firedEvents, float alpha, MixBlend blend,
 									MixDirection direction) {
+            if (slotIndex >= skeleton.slots.Items.Length)
+            {
+                return;
+            }
 			Slot slot = skeleton.slots.Items[slotIndex];
 			if (!slot.bone.active) return;
 			VertexAttachment vertexAttachment = slot.attachment as VertexAttachment;

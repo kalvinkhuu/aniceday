@@ -106,7 +106,7 @@ namespace Spine.Unity.Examples {
 			{
 				input.x = 0.5f;
 			}
-			playerGameObject = GameObject.FindGameObjectWithTag("Player");
+			playerGameObject = GameObject.Find("Player");
 			playerController = playerGameObject.GetComponent<PlayerController>();
 		}
 
@@ -206,8 +206,9 @@ namespace Spine.Unity.Examples {
 
 			if (amountOfTimeGettingHit == maxHitpoints) 
 			{
-				Destroy(gameObject);
 				playerController.AddBadDeed();
+				Destroy(gameObject);
+				return;
 
 			}
 

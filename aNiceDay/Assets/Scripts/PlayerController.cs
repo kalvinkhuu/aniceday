@@ -80,9 +80,7 @@ namespace Spine.Unity.Examples
         //Added the attack header and the interaction header
         [Header("Attack")]
         public float attackDamage = 10;
-
-        [Header("Health")]
-        float LifeTimerLimit;
+        
 
         [Header("Animation")]
         public SkeletonAnimationHandleExample animationHandle;
@@ -116,9 +114,20 @@ namespace Spine.Unity.Examples
 
         private House houseEntered = null;
         private bool isInsideHouse = false;
+
+        public int LifeTimerLimit = 180;
+        public int currentHealth;
+        public HealthBar healthBar;
+
+        private FoodStolen foodStolen;
+
         void Start()
         {
-            LifeTimerLimit = 180;
+            currentHealth = LifeTimerLimit;
+            if (healthBar)
+            {
+                healthBar.SetMaxHealth(LifeTimerLimit);
+            }
             playerWeapon = GetComponentInChildren<PlayerWeapon>();
             
         }
@@ -282,10 +291,10 @@ namespace Spine.Unity.Examples
 
             if (transform.position.y <= -5)
             {
-                LifeTimerLimit = 0.0f;
+                currentHealth = 0;
             }
 
-            if (LifeTimerLimit <= 0.0f)
+            if (currentHealth <= 10)
             {
                 SceneManager.LoadScene("TransitionScene");
             }
@@ -296,6 +305,9 @@ namespace Spine.Unity.Examples
                 {
                     InteractingObject.SetInteracting(true);
                 }
+
+
+
             }
 
             if (Input.GetButtonDown("Exit"))
@@ -304,6 +316,7 @@ namespace Spine.Unity.Examples
                 {
                     houseEntered.SetDoorOpened(false);
                     isInsideHouse = false;
+                    houseEntered = null;
                 }
             }
 
@@ -315,8 +328,18 @@ namespace Spine.Unity.Examples
                     houseEntered.SetDoorOpened(true);
                     isInsideHouse = true;
                 }
+
+               
                 
             }
+
+            if (healthBar)
+            {
+                currentHealth = LifeTimerLimit - (int)Time.time;
+                healthBar.SetHealth(currentHealth);
+            }
+
+            
 
         }
 
@@ -441,7 +464,12 @@ namespace Spine.Unity.Examples
             if (Interaction != null)
             {
                 InteractingObject = Interaction;
-                houseEntered = InteractingObject.GetComponent<House>();
+                House HouseHit = InteractingObject.GetComponent<House>();
+                if (HouseHit != null)
+                {
+                    houseEntered = HouseHit;
+                }
+                
             }
         }
 
@@ -453,9 +481,19 @@ namespace Spine.Unity.Examples
                 if (InteractingObject != null)
                 {
                     InteractingObject.SetInteracting(false);
+                    House HouseHit = InteractingObject.GetComponent<House>();
+                    if (!isInsideHouse && HouseHit == houseEntered && HouseHit != null)
+                    {
+                        houseEntered = null;
+                    }
                 }
                 InteractingObject = null;
+
+                
+
+                
             }
+
         }
 
     }
