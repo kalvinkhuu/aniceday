@@ -3331,12 +3331,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Explore the village, use arrow keys or WASD to move, space to jump and
-    control to attack.
+  m_text: 'Explore the village, use Arrow Keys or WASD to move, Space to jump and
+    Q or Left Mouse Button to attack.
 
 
-    Press F to interact with houses, coins and food. Press
-    E to exit houses
+    Press F to interact with houses, coins
+    and food. Press E to exit houses
 
 
     Enjoy the scenes of a good life!
