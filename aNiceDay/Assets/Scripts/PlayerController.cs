@@ -328,7 +328,12 @@ namespace Spine.Unity.Examples
                     houseEntered.SetDoorOpened(true);
                     isInsideHouse = true;
                 }
-
+                else if (foodStolen != null)
+                {
+                    AddBadDeed();
+                    GameObject.Destroy(foodStolen.gameObject);
+                    foodStolen = null;
+                }
                
                 
             }
@@ -468,8 +473,15 @@ namespace Spine.Unity.Examples
                 if (HouseHit != null)
                 {
                     houseEntered = HouseHit;
+                    return;
                 }
                 
+                FoodStolen stolenFood = InteractingObject.GetComponent<FoodStolen>();
+                if (stolenFood != null)
+                {
+                    foodStolen = stolenFood;                   
+                    return;
+                }
             }
         }
 
