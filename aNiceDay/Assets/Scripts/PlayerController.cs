@@ -121,6 +121,8 @@ namespace Spine.Unity.Examples
 
         private FoodStolen foodStolen;
 
+        private MoneyInteraction moneyStolen;
+
         void Start()
         {
             currentHealth = LifeTimerLimit;
@@ -322,8 +324,8 @@ namespace Spine.Unity.Examples
 
             if (InteractingObject != null && InteractingObject.GetIsInteracting()) 
             {
-                
-                if (houseEntered != null) 
+
+                if (houseEntered != null)
                 {
                     houseEntered.SetDoorOpened(true);
                     isInsideHouse = true;
@@ -334,7 +336,12 @@ namespace Spine.Unity.Examples
                     GameObject.Destroy(foodStolen.gameObject);
                     foodStolen = null;
                 }
-               
+                else if (moneyStolen != null)
+                {
+                    AddBadDeed();
+                    GameObject.Destroy(moneyStolen.gameObject);
+                    moneyStolen = null;
+                }
                 
             }
 
@@ -482,6 +489,14 @@ namespace Spine.Unity.Examples
                     foodStolen = stolenFood;                   
                     return;
                 }
+
+                MoneyInteraction stolenMoney = InteractingObject.GetComponent<MoneyInteraction>();
+                if (stolenMoney != null)
+                {
+                    moneyStolen = stolenMoney;
+                    return;
+                }
+
             }
         }
 
