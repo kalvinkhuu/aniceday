@@ -121,6 +121,8 @@ namespace Spine.Unity.Examples
 
         private FoodStolen foodStolen;
 
+        private MoneyInteraction moneyStolen;
+
         void Start()
         {
             currentHealth = LifeTimerLimit;
@@ -296,7 +298,7 @@ namespace Spine.Unity.Examples
 
             if (currentHealth <= 10)
             {
-                SceneManager.LoadScene("TransitionScene");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex == 1 ? 2 : 0);
             }
 
             if (Input.GetButtonDown("Interact"))
@@ -322,19 +324,24 @@ namespace Spine.Unity.Examples
 
             if (InteractingObject != null && InteractingObject.GetIsInteracting()) 
             {
-                
-                if (houseEntered != null) 
+
+                if (houseEntered != null)
                 {
                     houseEntered.SetDoorOpened(true);
                     isInsideHouse = true;
                 }
-                else if (foodStolen != null)
+                if (foodStolen != null)
                 {
                     AddBadDeed();
                     GameObject.Destroy(foodStolen.gameObject);
                     foodStolen = null;
                 }
-               
+                if (moneyStolen != null)
+                {
+                    AddBadDeed();
+                    GameObject.Destroy(moneyStolen.gameObject);
+                    moneyStolen = null;
+                }
                 
             }
 
@@ -482,6 +489,14 @@ namespace Spine.Unity.Examples
                     foodStolen = stolenFood;                   
                     return;
                 }
+
+                MoneyInteraction stolenMoney = InteractingObject.GetComponent<MoneyInteraction>();
+                if (stolenMoney != null)
+                {
+                    moneyStolen = stolenMoney;
+                    return;
+                }
+
             }
         }
 
@@ -497,6 +512,12 @@ namespace Spine.Unity.Examples
                     if (!isInsideHouse && HouseHit == houseEntered && HouseHit != null)
                     {
                         houseEntered = null;
+                    }
+
+                    FoodStolen stolenFood = InteractingObject.GetComponent<FoodStolen>();
+                    if (stolenFood != null)
+                    {
+                        foodStolen = null;
                     }
                 }
                 InteractingObject = null;

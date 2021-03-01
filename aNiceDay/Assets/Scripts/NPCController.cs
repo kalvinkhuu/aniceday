@@ -84,10 +84,14 @@ namespace Spine.Unity.Examples {
 		[Header("NPC Options")]
 		public bool doesPatrol = true;
 		public bool isInteractable = true;
+        public bool inHouse = false;
 
 		[Header("Animation")]
 		public SkeletonAnimationHandleExample animationHandle;
 
+
+        private GameObject Particles;
+        private GameObject Visual;
 
 		Vector2 input = default(Vector2);
 		Vector3 velocity = default(Vector3);
@@ -108,7 +112,9 @@ namespace Spine.Unity.Examples {
 			}
 			playerGameObject = GameObject.Find("Player");
 			playerController = playerGameObject.GetComponent<PlayerController>();
-		}
+            Particles = gameObject.transform.Find("Particles").gameObject;
+            Visual = gameObject.transform.Find("Visuals").gameObject;
+        }
 
 		void Update () {
 
@@ -207,7 +213,9 @@ namespace Spine.Unity.Examples {
 			if (amountOfTimeGettingHit == maxHitpoints) 
 			{
 				playerController.AddBadDeed();
-				Destroy(gameObject);
+                Particles.SetActive(true);
+                Visual.SetActive(false);
+                GameObject.Destroy(gameObject, 0.5f);
 				return;
 
 			}
@@ -230,6 +238,11 @@ namespace Spine.Unity.Examples {
 			}
 			
 
+		}
+
+		private void LateUpdate()
+		{
+			transform.position = new Vector3(transform.position.x, transform.position.y, inHouse ? 3.0f : 0.0f);
 		}
 
 		private void OnTriggerEnter(Collider other)
