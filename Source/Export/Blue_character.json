@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "jaZWDZApUnUuscbVZHkS6vycuEc",
+	"hash": "KEPQqVUXvce0XDn47kd6HOLa6Pc",
 	"spine": "3.8.99",
 	"x": -105.21,
 	"y": -0.97,
@@ -624,7 +624,7 @@
 				"neck": { "path": "Villager boy/neck", "x": 14.76, "y": 3.09, "rotation": -99.74, "width": 39, "height": 47 }
 			},
 			"sword": {
-				"sword": { "path": "Villager boy/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 164, "height": 212 }
+				"sword": { "path": "Villager boy/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 71, "height": 13 }
 			}
 		}
 	},
@@ -692,7 +692,7 @@
 				"neck": { "path": "Villager girl 1/neck", "x": 14.76, "y": 3.09, "rotation": -99.74, "width": 39, "height": 47 }
 			},
 			"sword": {
-				"sword": { "path": "Villager girl 1/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 164, "height": 212 }
+				"sword": { "path": "Villager girl 1/sword", "x": 123.82, "y": -2.09, "rotation": 53.84, "width": 71, "height": 13 }
 			}
 		}
 	}
