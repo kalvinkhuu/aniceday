@@ -298,7 +298,7 @@ namespace Spine.Unity.Examples
 
             if (currentHealth <= 10)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex == 1 ? 2 : 0);
             }
 
             if (Input.GetButtonDown("Interact"))
