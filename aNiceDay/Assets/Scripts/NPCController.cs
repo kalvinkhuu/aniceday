@@ -232,6 +232,11 @@ namespace Spine.Unity.Examples {
 
 		}
 
+		private void LateUpdate()
+		{
+			transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
+		}
+
 		private void OnTriggerEnter(Collider other)
 		{
 			var PlayerWeapon = other.GetComponent<PlayerWeapon>();
