@@ -90,6 +90,9 @@ namespace Spine.Unity.Examples {
 		public SkeletonAnimationHandleExample animationHandle;
 
 
+        private GameObject Particles;
+        private GameObject Visual;
+
 		Vector2 input = default(Vector2);
 		Vector3 velocity = default(Vector3);
 		float minimumJumpEndTime = 0;
@@ -109,7 +112,9 @@ namespace Spine.Unity.Examples {
 			}
 			playerGameObject = GameObject.Find("Player");
 			playerController = playerGameObject.GetComponent<PlayerController>();
-		}
+            Particles = gameObject.transform.Find("Particles").gameObject;
+            Visual = gameObject.transform.Find("Visuals").gameObject;
+        }
 
 		void Update () {
 
@@ -208,7 +213,9 @@ namespace Spine.Unity.Examples {
 			if (amountOfTimeGettingHit == maxHitpoints) 
 			{
 				playerController.AddBadDeed();
-				Destroy(gameObject);
+                Particles.SetActive(true);
+                Visual.SetActive(false);
+                GameObject.Destroy(gameObject, 0.5f);
 				return;
 
 			}
