@@ -336,7 +336,7 @@ namespace Spine.Unity.Examples
                     GameObject.Destroy(foodStolen.gameObject);
                     foodStolen = null;
                 }
-                else if (moneyStolen != null)
+                if (moneyStolen != null)
                 {
                     AddBadDeed();
                     GameObject.Destroy(moneyStolen.gameObject);
