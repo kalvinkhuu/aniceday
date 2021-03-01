@@ -1,5 +1,42 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &1808244232
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326935960996309660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.02
+  m_Center: {x: 0, y: 0, z: 0.01}
+--- !u!114 &1808244233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326935960996309660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd10e9c231a187d4fa619b508bdebeb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1808244234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326935960996309660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f63b6947ecf2245a9a252970ac0439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3232204137782415439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15,17 +52,17 @@ PrefabInstance:
     - target: {fileID: 2529134731629273193, guid: f7f703f48cee9bf49af60193f52d0dec,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.078772
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2529134731629273193, guid: f7f703f48cee9bf49af60193f52d0dec,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.13581301
+      value: 2.022
       objectReference: {fileID: 0}
     - target: {fileID: 2529134731629273193, guid: f7f703f48cee9bf49af60193f52d0dec,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.38778216
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2529134731629273193, guid: f7f703f48cee9bf49af60193f52d0dec,
         type: 3}
@@ -65,10 +102,16 @@ PrefabInstance:
     - target: {fileID: 2905554102738877139, guid: f7f703f48cee9bf49af60193f52d0dec,
         type: 3}
       propertyPath: m_Name
-      value: FoodPlate
+      value: FishPlate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7f703f48cee9bf49af60193f52d0dec, type: 3}
+--- !u!1 &326935960996309660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2905554102738877139, guid: f7f703f48cee9bf49af60193f52d0dec,
+    type: 3}
+  m_PrefabInstance: {fileID: 3232204137782415439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1135560399107403814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2529134731629273193, guid: f7f703f48cee9bf49af60193f52d0dec,
