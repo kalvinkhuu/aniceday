@@ -80,8 +80,6 @@ namespace Spine.Unity.Examples
         //Added the attack header and the interaction header
         [Header("Attack")]
         public float attackDamage = 10;
-
-        [Header("Health")]
         
 
         [Header("Animation")]
@@ -120,6 +118,8 @@ namespace Spine.Unity.Examples
         public int LifeTimerLimit = 180;
         public int currentHealth;
         public HealthBar healthBar;
+
+        private FoodStolen foodStolen;
 
         void Start()
         {
@@ -294,7 +294,7 @@ namespace Spine.Unity.Examples
                 currentHealth = 0;
             }
 
-            if (currentHealth <= 0)
+            if (currentHealth <= 10)
             {
                 SceneManager.LoadScene("TransitionScene");
             }
@@ -305,6 +305,9 @@ namespace Spine.Unity.Examples
                 {
                     InteractingObject.SetInteracting(true);
                 }
+
+
+
             }
 
             if (Input.GetButtonDown("Exit"))
@@ -324,10 +327,17 @@ namespace Spine.Unity.Examples
                     houseEntered.SetDoorOpened(true);
                     isInsideHouse = true;
                 }
+
+               
                 
             }
 
-            currentHealth = LifeTimerLimit - (int)dt;
+            if (healthBar)
+            {
+                currentHealth = LifeTimerLimit - (int)Time.time;
+                healthBar.SetHealth(currentHealth);
+            }
+
             
 
         }
