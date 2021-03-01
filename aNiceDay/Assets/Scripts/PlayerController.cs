@@ -313,6 +313,7 @@ namespace Spine.Unity.Examples
                 {
                     houseEntered.SetDoorOpened(false);
                     isInsideHouse = false;
+                    houseEntered = null;
                 }
             }
 
@@ -453,7 +454,12 @@ namespace Spine.Unity.Examples
             if (Interaction != null)
             {
                 InteractingObject = Interaction;
-                houseEntered = InteractingObject.GetComponent<House>();
+                House HouseHit = InteractingObject.GetComponent<House>();
+                if (HouseHit != null)
+                {
+                    houseEntered = HouseHit;
+                }
+                
             }
         }
 
@@ -465,9 +471,19 @@ namespace Spine.Unity.Examples
                 if (InteractingObject != null)
                 {
                     InteractingObject.SetInteracting(false);
+                    House HouseHit = InteractingObject.GetComponent<House>();
+                    if (!isInsideHouse && HouseHit == houseEntered && HouseHit != null)
+                    {
+                        houseEntered = null;
+                    }
                 }
                 InteractingObject = null;
+
+                
+
+                
             }
+
         }
 
     }

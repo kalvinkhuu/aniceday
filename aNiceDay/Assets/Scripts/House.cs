@@ -14,8 +14,8 @@ public class House : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FrontOfHouse = GameObject.Find("FrontOfHouse");
-        DoorFrame = GameObject.Find("DoorFrame");
+        FrontOfHouse = gameObject.transform.Find("FrontOfHouse").gameObject;
+        DoorFrame = gameObject.transform.Find("DoorFrame").gameObject;
     }
 
     public void SetDoorOpened(bool bOpened)
